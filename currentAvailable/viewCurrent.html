@@ -1,0 +1,73 @@
+<button class="btn bg-primary" ng-click="fishes=!fishes">{{fishes ? 'Show Fish' : 'Hide Fish'}}</button>
+<button class="btn bg-primary" ng-click="insects=!insects">{{insects ? 'Hide Bugs' : 'Hide Bugs'}}</button>
+<button class="btn bg-primary" ng-click="sea=!sea">{{sea ? 'Hide Sea Creatures' : 'Hide Creatures'}}</button>
+<h1>All Critters In Northern Hemisphere That Is Available At This Time</h1>
+	<div ng-controller="get-view-current-ctrl" ng-init="refresh()">
+        <table class="table" ng-hide="fishes">
+			<caption><h1>All Fish</h1></caption>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Bell</th>
+					 <th>Bell From CJ</th>
+					<th>Shadow</th>
+					<th>Time</th>
+                    <th>Image</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="i in fishs" ng-if="i.availability['month-array-northern'].indexOf(currentMonth) > -1 && i.availability['time-array'].indexOf(currentHour) > -1">
+					<td>{{i.name['name-USen']}}</td>
+                    <td>{{i.price}}</td>
+					<td>{{i['price-cj']}}</td>
+					<td>{{i.shadow}}</td>
+					<td>{{i.availability['time']}}</td>
+                    <td><img src={{i.image_uri}} width="150px" height="150px"></td>
+                </tr>
+            </tbody>
+		<table class="table" ng-hide="insects">
+			<caption><h1>All Bugs</h1></caption>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Bell</th>
+					 <th>Bell From Flick</th>
+					<th>Time</th>
+                    <th>Image</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="b in bugs" ng-if="b.availability['month-array-northern'].indexOf(currentMonth) > -1 && b.availability['time-array'].indexOf(currentHour) > -1">
+					<td>{{b.name['name-USen']}}</td>
+                    <td>{{b.price}}</td>
+					<td>{{b['price-flick']}}</td>
+					<td>{{b.availability['time']}}</td>
+                    <td><img src={{b.image_uri}} width="150px" height="150px"></td>
+                </tr>
+            </tbody>
+        </table>
+
+		<table class="table" ng-hide="sea">
+			<caption><h1>All Sea Creatures</h1></caption>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Bell</th>
+					 <th>Shadow</th>
+					 <th>Speed</th>
+					<th>Time</th>
+                    <th>Image</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="s in seas" ng-if="s.availability['month-array-northern'].indexOf(currentMonth) > -1 && s.availability['time-array'].indexOf(currentHour) > -1">
+					<td>{{s.name['name-USen']}}</td>
+                    <td>{{s.price}}</td>
+					<td>{{s.shadow}}</td>
+					<td>{{s.speed}}</td>
+					<td>{{s.availability['time']}}</td>
+                    <td><img src={{s.image_uri}} width="150px" height="150px"></td>
+                </tr>
+            </tbody>
+        </table>
+	</div>
