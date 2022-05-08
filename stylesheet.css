@@ -12,8 +12,5 @@
 }
 body{
 	font-family: 'finkheavyregular', Arial, sans-serif;
-}
-
-body {
-  background: url("https://sjrin.github.io/background.jpg");
+	background-image: url("https://sjrin.github.io/background.jpg");
 }
