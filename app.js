@@ -25,6 +25,10 @@ angular.module('exercise-app').config(function($routeProvider){
        templateUrl: 'leavingMonth/viewLeaving.html',
        controller: 'get-view-leaving-ctrl'
    })
+   .when('/viewNewSouth', {
+    templateUrl: 'newSouthern.html',
+    controller: 'main-ctrl'
+})
    .otherwise({
        redirectTo: '/'
    })

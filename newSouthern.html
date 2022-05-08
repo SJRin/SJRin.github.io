@@ -1,8 +1,8 @@
 <button class="btn bg-primary" ng-click="fishes=!fishes">{{fishes ? 'Show Fish' : 'Hide Fish'}}</button>
 <button class="btn bg-primary" ng-click="insects=!insects">{{insects ? 'Show Bugs' : 'Hide Bugs'}}</button>
 <button class="btn bg-primary" ng-click="sea=!sea">{{sea ? 'Show Sea Creatures' : 'Hide Sea Creatures'}}</button>
-
-	<div ng-controller="get-view-ctrl" ng-init="refresh()">
+<h1>All New Critters in Southern Hemisphere</h1>
+	<div ng-controller="main-ctrl" ng-init="refresh()">
         <table class="table" ng-hide="fishes">
 			<caption><h1>All Fishes</h1></caption>
             <thead>
@@ -16,7 +16,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="i in fishs">
+                <tr ng-repeat="i in fishs" ng-if="i.availability['month-array-southern'][0] == currentMonth">
 					<td>{{i.name['name-USen']}}</td>
                     <td>{{i.price}}</td>
 					<td>{{i['price-cj']}}</td>
@@ -37,7 +37,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="b in bugs">
+                <tr ng-repeat="b in bugs" ng-if="b.availability['month-array-southern'][0] == currentMonth">
 					<td>{{b.name['name-USen']}}</td>
                     <td>{{b.price}}</td>
 					<td>{{b['price-flick']}}</td>
@@ -59,7 +59,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="s in seas">
+                <tr ng-repeat="s in seas" ng-if="s.availability['month-array-southern'][0] == currentMonth">
 					<td>{{s.name['name-USen']}}</td>
                     <td>{{s.price}}</td>
 					<td>{{s.shadow}}</td>
