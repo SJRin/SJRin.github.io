@@ -25,8 +25,16 @@ angular.module('exercise-app').config(function($routeProvider){
        templateUrl: 'leavingMonth/viewLeaving.html',
        controller: 'get-view-leaving-ctrl'
    })
+   .when('/viewCurrentSouth', {
+    templateUrl: 'south/currentSouthern.html',
+    controller: 'main-ctrl'
+})
    .when('/viewNewSouth', {
-    templateUrl: 'viewNewSouth/newSouthern.html',
+    templateUrl: 'south/newSouthern.html',
+    controller: 'main-ctrl'
+})
+.when('/viewLeavingSouth', {
+    templateUrl: 'south/leavingSouthern.html',
     controller: 'main-ctrl'
 })
    .otherwise({
