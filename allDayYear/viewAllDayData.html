@@ -1,8 +1,8 @@
 <button class="btn bg-primary" ng-click="fishes=!fishes">{{fishes ? 'Show Fish' : 'Hide Fish'}}</button>
-<button class="btn bg-primary" ng-click="insects=!insects">{{insects ? 'Hide Bugs' : 'Hide Bugs'}}</button>
-<button class="btn bg-primary" ng-click="sea=!sea">{{sea ? 'Hide Sea Creatures' : 'Hide Creatures'}}</button>
+<button class="btn bg-primary" ng-click="insects=!insects">{{insects ? 'Show Bugs' : 'Hide Bugs'}}</button>
+<button class="btn bg-primary" ng-click="sea=!sea">{{sea ? 'Show Sea Creatures' : 'Hide Sea Creatures'}}</button>
 <h1>All Critters That is All Day and All Year</h1>
-	<div ng-controller="get-view-allDay-ctrl" ng-init="refresh()">
+	<div ng-controller="main-ctrl" ng-init="refresh()">
         <table class="table" ng-hide="fishes">
 			<caption><h1>All Fish</h1></caption>
             <thead>
@@ -11,7 +11,6 @@
                     <th>Bell</th>
 					 <th>Bell From CJ</th>
 					<th>Shadow</th>
-					<th>Time</th>
                     <th>Image</th>
                 </tr>
             </thead>
@@ -21,7 +20,6 @@
                     <td>{{i.price}}</td>
 					<td>{{i['price-cj']}}</td>
 					<td>{{i.shadow}}</td>
-					<td>{{i.availability['time']}}</td>
                     <td><img src={{i.image_uri}} width="150px" height="150px"></td>
                 </tr>
             </tbody>
@@ -32,7 +30,6 @@
                     <th>Name</th>
                     <th>Bell</th>
 					 <th>Bell From Flick</th>
-					<th>Time</th>
                     <th>Image</th>
                 </tr>
             </thead>
@@ -41,7 +38,6 @@
 					<td>{{b.name['name-USen']}}</td>
                     <td>{{b.price}}</td>
 					<td>{{b['price-flick']}}</td>
-					<td>{{b.availability['time']}}</td>
                     <td><img src={{b.image_uri}} width="150px" height="150px"></td>
                 </tr>
             </tbody>
@@ -54,7 +50,6 @@
                     <th>Bell</th>
 					 <th>Shadow</th>
 					 <th>Speed</th>
-					<th>Time</th>
                     <th>Image</th>
                 </tr>
             </thead>
@@ -64,7 +59,6 @@
                     <td>{{s.price}}</td>
 					<td>{{s.shadow}}</td>
 					<td>{{s.speed}}</td>
-					<td>{{s.availability['time']}}</td>
                     <td><img src={{s.image_uri}} width="150px" height="150px"></td>
                 </tr>
             </tbody>

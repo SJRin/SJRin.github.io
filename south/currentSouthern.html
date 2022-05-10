@@ -21,7 +21,7 @@
                     <td>{{i.price}}</td>
 					<td>{{i['price-cj']}}</td>
 					<td>{{i.shadow}}</td>
-					<td>{{i.availability['time']}}</td>
+					<td>{{i.availability['isAllDay'] == true ? 'Available All Day' : i.availability['time']}}</td>
                     <td><img src={{i.image_uri}} width="150px" height="150px"></td>
                 </tr>
             </tbody>
@@ -41,7 +41,7 @@
 					<td>{{b.name['name-USen']}}</td>
                     <td>{{b.price}}</td>
 					<td>{{b['price-flick']}}</td>
-					<td>{{b.availability['time']}}</td>
+					<td>{{b.availability['isAllDay'] == true ? 'Available All Day' : b.availability['time']}}</td>
                     <td><img src={{b.image_uri}} width="150px" height="150px"></td>
                 </tr>
             </tbody>
@@ -65,7 +65,7 @@
                     <td>{{s.price}}</td>
 					<td>{{s.shadow}}</td>
 					<td>{{s.speed}}</td>
-					<td>{{s.availability['time']}}</td>
+					<td>{{s.availability['isAllDay'] == true ? 'Available All Day' : s.availability['time']}}</td>
                     <td><img src={{s.image_uri}} width="150px" height="150px"></td>
                 </tr>
             </tbody>

@@ -7,23 +7,23 @@ angular.module('exercise-app').config(function($routeProvider){
    })
    .when('/view', {
        templateUrl: 'viewData/viewData.html',
-       controller: 'get-view-ctrl'
+       controller: 'main-ctrl'
    })
       .when('/viewAllDay', {
        templateUrl: 'allDayYear/viewAllDayData.html',
-       controller: 'get-view-allDay-ctrl'
+       controller: 'main-ctrl'
    })
-       .when('/viewCurrent', {
-       templateUrl: 'currentAvailable/viewCurrent.html',
-       controller: 'get-view-current-ctrl'
+       .when('/viewCurrentNorth', {
+       templateUrl: 'north/viewCurrentNorth.html',
+       controller: 'main-ctrl'
    })
-      .when('/viewNew', {
-       templateUrl: 'newMonth/viewNew.html',
-       controller: 'get-view-new-ctrl'
+      .when('/viewNewNorth', {
+       templateUrl: 'north/viewNewNorth.html',
+       controller: 'main-ctrl'
    })
-      .when('/viewLeaving', {
-       templateUrl: 'leavingMonth/viewLeaving.html',
-       controller: 'get-view-leaving-ctrl'
+      .when('/viewLeavingNorth', {
+       templateUrl: 'north/viewLeavingNorth.html',
+       controller: 'main-ctrl'
    })
    .when('/viewCurrentSouth', {
     templateUrl: 'south/currentSouthern.html',

@@ -2,7 +2,7 @@
 <button class="btn bg-primary" ng-click="insects=!insects">{{insects ? 'Show Bugs' : 'Hide Bugs'}}</button>
 <button class="btn bg-primary" ng-click="sea=!sea">{{sea ? 'Show Sea Creatures' : 'Hide Sea Creatures'}}</button>
 
-	<div ng-controller="get-view-ctrl" ng-init="refresh()">
+	<div ng-controller="main-ctrl" ng-init="refresh()">
         <table class="table" ng-hide="fishes">
 			<caption><h1>All Fishes</h1></caption>
             <thead>
@@ -11,6 +11,8 @@
                     <th>Bell</th>
 					 <th>Bell From CJ</th>
 					<th>Shadow</th>
+                    <th>Northern Months</th>
+                    <th>Southern Months</th>
 					<th>Time</th>
                     <th>Image</th>
                 </tr>
@@ -21,7 +23,9 @@
                     <td>{{i.price}}</td>
 					<td>{{i['price-cj']}}</td>
 					<td>{{i.shadow}}</td>
-					<td>{{i.availability['time']}}</td>
+                    <td>{{i.availability['isAllYear'] == true ? 'Available All Year' : i.availability['month-northern']}}</td>
+                    <td>{{i.availability['isAllYear'] == true ? 'Available All Year' : i.availability['month-southern']}}</td>
+					<td>{{i.availability['isAllDay'] == true ? 'Available All Day' : i.availability['time']}}</td>
                     <td><img src={{i.image_uri}} width="150px" height="150px"></td>
                 </tr>
             </tbody>
@@ -33,6 +37,8 @@
                     <th>Bell</th>
 					 <th>Bell From Flick</th>
 					<th>Time</th>
+                    <th>Northern Months</th>
+                    <th>Southern Months</th>
                     <th>Image</th>
                 </tr>
             </thead>
@@ -41,7 +47,9 @@
 					<td>{{b.name['name-USen']}}</td>
                     <td>{{b.price}}</td>
 					<td>{{b['price-flick']}}</td>
-					<td>{{b.availability['time']}}</td>
+					<td>{{b.availability['isAllYear'] == true ? 'Available All Year' : b.availability['month-northern']}}</td>
+                    <td>{{b.availability['isAllYear'] == true ? 'Available All Year' : b.availability['month-southern']}}</td>
+					<td>{{b.availability['isAllDay'] == true ? 'Available All Day' : b.availability['time']}}</td>
                     <td><img src={{b.image_uri}} width="150px" height="150px"></td>
                 </tr>
             </tbody>
@@ -52,8 +60,10 @@
                 <tr>
                     <th>Name</th>
                     <th>Bell</th>
-					 <th>Shadow</th>
-					 <th>Speed</th>
+					<th>Shadow</th>
+					<th>Speed</th>
+                    <th>Northern Months</th>
+                    <th>Southern Months</th>
 					<th>Time</th>
                     <th>Image</th>
                 </tr>
@@ -64,7 +74,9 @@
                     <td>{{s.price}}</td>
 					<td>{{s.shadow}}</td>
 					<td>{{s.speed}}</td>
-					<td>{{s.availability['time']}}</td>
+					<td>{{s.availability['isAllYear'] == true ? 'Available All Year' : s.availability['month-northern']}}</td>
+                    <td>{{s.availability['isAllYear'] == true ? 'Available All Year' : s.availability['month-southern']}}</td>
+					<td>{{s.availability['isAllDay'] == true ? 'Available All Day' : s.availability['time']}}</td>
                     <td><img src={{s.image_uri}} width="150px" height="150px"></td>
                 </tr>
             </tbody>
